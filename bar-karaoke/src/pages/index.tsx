@@ -1,15 +1,15 @@
 import Head from 'next/head';
+import HomePage from '@/components/home/home';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Karaoke-bar</title>
         <meta name="description" content="Karaoke bar" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>hello</main>
+      <HomePage />
     </>
   );
 }
