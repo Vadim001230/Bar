@@ -1,15 +1,17 @@
 import Head from 'next/head';
-import HomePage from '@/components/home/home';
+import Layout from '@/components/layout';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Karaoke-bar</title>
-        <meta name="description" content="Karaoke bar" />
+        <title>Караоке-бар</title>
+        <meta name="description" content="Караоке-бар" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <HomePage />
+      <Layout>
+        <h1>Главная</h1>
+      </Layout>
     </>
   );
 }
