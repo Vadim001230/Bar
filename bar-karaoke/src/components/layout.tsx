@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: ReactElement }) {
   return (
     <>
       <Header />
-      <main style={{ marginTop: '65px' }}>{children}</main>
+      <main style={{ margin: '0 10px' }}>{children}</main>
     </>
   );
 }

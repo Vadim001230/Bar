@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Marck+Script&family=Montserrat:wght@400;500&family=Source+Sans+Pro:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Marck+Script&family=Montserrat:wght@400;500&family=Source+Sans+Pro:wght@400;900&display=swap');
+
+:root {
+  --white: #fff;
+  --black: rgb(37, 37, 37);
+  --gold: #C59D5F;
+  --grey: #515151;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -21,7 +28,8 @@ body {
 html, body {
   min-height: 100vh;
   overflow-x: hidden;
-  color: rgb(37, 37, 37);
+  color: var(--black);
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6, p, button {
@@ -32,7 +40,7 @@ h1, h2, h3, h4, h5, h6, p, button {
   border: none;
   outline: none;
   background: none;
-  color: rgb(37, 37, 37);
+  color: var(--black);
 }
 
 button {
