@@ -8,9 +8,9 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function Content({ title, subTitle, content, reverse, children }: Props) {
+export default function ContentComponent({ title, subTitle, content, reverse, children }: Props) {
   return (
-    <div
+    <section
       className={`${styles.content} container`}
       style={{ flexDirection: reverse ? 'row-reverse' : 'row' }}
     >
@@ -21,6 +21,6 @@ export default function Content({ title, subTitle, content, reverse, children }:
         <p>{content}</p>
       </div>
       <div className={styles.content__right}>{children}</div>
-    </div>
+    </section>
   );
 }

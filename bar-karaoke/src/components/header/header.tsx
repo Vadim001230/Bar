@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './header.module.scss';
 import { InstagramIcon } from '../../UI/icons/';
 
-export default function Header() {
+export default function HeaderComponent() {
   const router = useRouter();
   const [color, setColor] = useState('var(--white)');
   const [bgColor, setBgColor] = useState('transparent');
