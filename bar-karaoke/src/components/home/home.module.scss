@@ -30,9 +30,10 @@
   h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 900;
-    font-size: 47px;
+    font-size: 3rem;
     color: var(--white);
     line-height: 0.9;
+    text-transform: uppercase;
     opacity: 0;
     animation: fadeInh1 0.3s ease-out 0.3s forwards;
   }
@@ -45,7 +46,7 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     opacity: 0;
-    animation: fadeInh5 0.4s ease-out 1.2s forwards;
+    animation: fadeInh5 0.3s ease-out 1.2s forwards;
   }
 }
 
@@ -119,6 +120,14 @@
       opacity: 1;
     }
   }
+}
+
+.culinary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 45%;
 }
 
 @keyframes fadeInh1 {

@@ -14,8 +14,6 @@ export default function Header() {
       window.scrollY > window.innerHeight - 30
         ? (setColor('var(--black)'), setBgColor('var(--white)'))
         : (setColor('var(--white)'), setBgColor('transparent'));
-      console.log(window.innerHeight);
-      console.log(window.scrollY);
     };
     window.addEventListener('scroll', handleScroll);
   }, []);
