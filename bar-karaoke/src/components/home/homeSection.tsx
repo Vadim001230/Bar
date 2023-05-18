@@ -8,7 +8,7 @@ import ParralaxComponent from '../parallax/parallax';
 export default function HomeSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollToBottom = () => {
-    smoothScroll(window.innerHeight, 300);
+    smoothScroll(window.innerHeight - window.scrollY, 300);
   };
 
   useEffect(() => {

@@ -1,0 +1,36 @@
+.footer {
+  background-color: var(--dark-grey);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  &__scrollbtn {
+    fill: var(--dark-grey);
+    overflow: hidden;
+    position: absolute;
+    top: -47px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--white);
+  }
+
+  &__container {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__content {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 2rem 0;
+  }
+}

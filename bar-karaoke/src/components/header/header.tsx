@@ -6,17 +6,21 @@ import { InstagramIcon } from '../../UI/icons/';
 
 export default function HeaderComponent() {
   const router = useRouter();
-  const [color, setColor] = useState('var(--white)');
-  const [bgColor, setBgColor] = useState('transparent');
+  const [color, setColor] = useState(router.pathname === '/' ? 'var(--white)' : 'var(--black)');
+  const [bgColor, setBgColor] = useState(router.pathname === '/' ? 'transparent' : 'var(--white)');
 
   useEffect(() => {
     const handleScroll = () => {
-      window.scrollY > window.innerHeight - 30
-        ? (setColor('var(--black)'), setBgColor('var(--white)'))
-        : (setColor('var(--white)'), setBgColor('transparent'));
+      if (router.pathname === '/') {
+        window.scrollY > window.innerHeight - 30
+          ? (setColor('var(--black)'), setBgColor('var(--white)'))
+          : (setColor('var(--white)'), setBgColor('transparent'));
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [router.pathname]);
 
   return (
     <header className={styles.header} style={{ backgroundColor: bgColor }}>
