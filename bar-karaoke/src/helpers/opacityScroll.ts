@@ -14,7 +14,7 @@ export const opacityScroll = (elementRef: RefObject<HTMLElement>) => {
         const opacity =
           1 - (halfWindowHeight - (distanceFromTop + elementHeight)) / halfWindowHeight;
         const lineHeight =
-          1 + (halfWindowHeight - (distanceFromTop + elementHeight)) / (halfWindowHeight * 1.5);
+          1 + (halfWindowHeight - (distanceFromTop + elementHeight)) / (halfWindowHeight / 2);
         parallaxText.style.opacity = opacity.toString();
 
         const children = Array.from(parallaxText.children) as HTMLElement[];

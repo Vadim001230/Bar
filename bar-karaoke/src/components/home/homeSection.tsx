@@ -6,18 +6,24 @@ import ContentComponent from '../content/content';
 import ParralaxComponent from '../parallax/parallax';
 import Image from 'next/image';
 import { opacityScroll } from '@/helpers/opacityScroll';
+import { widthScroll } from '@/helpers/widthScroll';
 
 export default function HomeSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const opacityRef = useRef<HTMLElement>(null);
-  const scrollHandler = opacityScroll(opacityRef);
+  const separatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const scrollHandlerWidth = widthScroll(separatorRef);
+    const scrollHandler = opacityScroll(opacityRef);
+    window.addEventListener('scroll', scrollHandlerWidth);
     window.addEventListener('scroll', scrollHandler);
     return () => {
       window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', scrollHandlerWidth);
     };
   }, []);
+
   const scrollToBottom = () => {
     smoothScroll(window.innerHeight - window.scrollY, 300);
   };
@@ -45,7 +51,7 @@ export default function HomeSection() {
         <article className={styles.article} ref={opacityRef}>
           <h2>Welcome</h2>
           <h1>Glory hall</h1>
-          <div className={styles.separator}>
+          <div className={styles.separator} ref={separatorRef}>
             <div className={styles.separator__left}></div>
             <div className={styles.separator__center}>✻</div>
             <div className={styles.separator__right}></div>
@@ -59,7 +65,8 @@ export default function HomeSection() {
           </button>
         </div>
       </section>
-      <section>
+
+      <div className="container">
         <ContentComponent
           title={'Discover'}
           subTitle={'OUR STORY'}
@@ -69,12 +76,16 @@ export default function HomeSection() {
           reverse={false}
         >
           <div className={styles.imagesX1}>
-            <Image src="/hp_6.jpg" alt="" fill={true} />
+            <div>
+              <Image src="/hp_6.jpg" alt="" fill={true} />
+            </div>
           </div>
         </ContentComponent>
+      </div>
 
-        <ParralaxComponent title={'Tasteful'} subtitle={'RECIPES'} imageSrc={'/hp_11.jpg'} />
+      <ParralaxComponent title={'Tasteful'} subtitle={'RECIPES'} imageSrc={'/hp_11.jpg'} />
 
+      <div className="container">
         <ContentComponent
           title={'Discover'}
           subTitle={'Караоке'}
@@ -98,9 +109,11 @@ export default function HomeSection() {
             </div>
           </div>
         </ContentComponent>
+      </div>
 
-        <ParralaxComponent title={'The perfect'} subtitle={'BLEND'} imageSrc={'vip_2.jpg'} />
+      <ParralaxComponent title={'The perfect'} subtitle={'BLEND'} imageSrc={'vip_2.jpg'} />
 
+      <div className="container">
         <ContentComponent
           title={'Culinary'}
           subTitle={'delight'}
@@ -118,7 +131,7 @@ export default function HomeSection() {
             </div>
           </div>
         </ContentComponent>
-      </section>
+      </div>
     </>
   );
 }
