@@ -21,7 +21,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 900;
     letter-spacing: 2px;
-    width: 10%;
+    width: 160px;
     color: var(--black);
   }
   &__media {
@@ -43,7 +43,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 80%;
+  width: calc(90% - 160px);
 
   &__link, &__link_active {
     font-weight: 500;

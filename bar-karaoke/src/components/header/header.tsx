@@ -26,7 +26,7 @@ export default function HeaderComponent() {
     <header className={styles.header} style={{ backgroundColor: bgColor }}>
       <div className={`${styles.header__container} container`}>
         <h1 className={styles.header__logo} style={{ color: color }}>
-          Logo
+          Glory hall
         </h1>
         <nav className={styles.nav}>
           <Link

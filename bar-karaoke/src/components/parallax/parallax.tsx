@@ -17,7 +17,7 @@ export default function ParralaxComponent({ title, subtitle, imageSrc }: Props) 
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const containerTop = containerRef.current.getBoundingClientRect().top + scrollTop;
           const speed = 0.4;
-          const offsetY = (scrollTop - containerTop) * speed;
+          const offsetY = (scrollTop - containerTop - containerTop / 3) * speed;
           containerRef.current.style.backgroundPositionY = `${offsetY}px`;
         }
       };

@@ -1,27 +1,20 @@
-export default function smoothScroll(distance: number, duration: number): void {
+export default function smoothScroll(distance: number, duration: number) {
   const initialTime = performance.now();
-  const scrollY = window.scrollY || window.pageYOffset;
+  const startScrollY = window.scrollY || window.pageYOffset;
 
-  const easing = (t: number): number =>
-    t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  const easing = (t: number) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1);
 
-  const getScrollTop = (time: number): number => {
-    const currentTime = time - initialTime;
-    if (currentTime >= duration) {
-      return scrollY + distance;
-    } else {
-      const normalizedTime = easing(currentTime / duration);
-      return scrollY + Math.floor(distance * normalizedTime);
+  const scrollStep = (currentTime: number) => {
+    const elapsedTime = currentTime - initialTime;
+    if (elapsedTime >= duration) {
+      window.scrollTo(0, startScrollY + distance);
+      return;
     }
+    const normalizedTime = easing(elapsedTime / duration);
+    const scrollDistance = Math.floor(distance * normalizedTime);
+    window.scrollTo(0, startScrollY + scrollDistance);
+    requestAnimationFrame(scrollStep);
   };
 
-  const scrollToTop = (time: number): void => {
-    const scrollTop = getScrollTop(time);
-    window.scrollTo(0, scrollTop);
-    if (scrollTop < scrollY + distance) {
-      requestAnimationFrame(scrollToTop);
-    }
-  };
-
-  requestAnimationFrame(scrollToTop);
+  requestAnimationFrame(scrollStep);
 }
