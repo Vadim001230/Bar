@@ -65,3 +65,9 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 900px) {
+  .footer {
+    margin-top: 5rem;
+  }
+}

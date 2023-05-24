@@ -52,11 +52,10 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .content {
     flex-direction: column !important;
-    margin: 2rem 0;
-    height: 100vh;
+    margin: 3rem 0;
     &__left {
       width: 100%;
 

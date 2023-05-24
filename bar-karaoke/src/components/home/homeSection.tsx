@@ -5,9 +5,19 @@ import smoothScroll from '@/helpers/smoothScroll';
 import ContentComponent from '../content/content';
 import ParralaxComponent from '../parallax/parallax';
 import Image from 'next/image';
+import { opacityScroll } from '@/helpers/opacityScroll';
 
 export default function HomeSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const opacityRef = useRef<HTMLElement>(null);
+  const scrollHandler = opacityScroll(opacityRef);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
   const scrollToBottom = () => {
     smoothScroll(window.innerHeight - window.scrollY, 300);
   };
@@ -32,7 +42,7 @@ export default function HomeSection() {
   return (
     <>
       <section className={styles.home} ref={containerRef}>
-        <article className={styles.article}>
+        <article className={styles.article} ref={opacityRef}>
           <h2>Welcome</h2>
           <h1>Glory hall</h1>
           <div className={styles.separator}>
@@ -41,13 +51,13 @@ export default function HomeSection() {
             <div className={styles.separator__right}></div>
           </div>
           <h5>Готовы к открытию</h5>
-          <div className={styles.scrollbtn}>
-            <ScrollButton />
-            <button className={styles.scrollbtn__arrow} onClick={scrollToBottom}>
-              <ArrowBottom />
-            </button>
-          </div>
         </article>
+        <div className={styles.scrollbtn}>
+          <ScrollButton />
+          <button className={styles.scrollbtn__arrow} onClick={scrollToBottom}>
+            <ArrowBottom />
+          </button>
+        </div>
       </section>
       <section>
         <ContentComponent
