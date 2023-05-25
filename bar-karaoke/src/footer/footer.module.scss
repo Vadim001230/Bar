@@ -1,0 +1,73 @@
+.footer {
+  background-color: var(--dark-grey);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  &__scrollbtn {
+    fill: var(--dark-grey);
+    overflow: hidden;
+    position: absolute;
+    top: -47px;
+    transform: translateY(50px);
+    z-index: -1;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--white);
+    opacity: 0;
+  }
+
+  &__arrowVisible {
+    animation: fadeIn 0.4s ease-out forwards;
+    button {
+      animation: fadeInBtn 0.4s ease-out 0.4s forwards;
+    }
+  }
+
+  &__container {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__content {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 2rem 0;
+    line-height: 1.5;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+    z-index: 0;
+  }
+}
+@keyframes fadeInBtn {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -55%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    margin-top: 5rem;
+  }
+}
