@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import styles from './parallax.module.scss';
 
 type Props = {
-  title: string;
+  title?: string;
   subtitle: string;
   imageSrc: string;
 };
@@ -46,7 +46,7 @@ export default function ParralaxComponent({ title, subtitle, imageSrc }: Props) 
       ref={containerRef}
     >
       <div className={styles.parallax__text} ref={opacityRef}>
-        <h3 className={styles.parallax__title}>{title}</h3>
+        {title && <h3 className={styles.parallax__title}>{title}</h3>}
         <h4 className={styles.parallax__subtitle}>{subtitle}</h4>
       </div>
     </section>
