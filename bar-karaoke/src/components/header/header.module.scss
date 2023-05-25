@@ -1,0 +1,225 @@
+.header {
+  background-color: var(--white);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  transition: background-color .2s linear;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__logo {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    width: 153px;
+    color: var(--black);
+    border-bottom: medium solid;
+  }
+
+  & hr {
+    display: none;
+  }
+
+  &__media {
+    fill: var(--black);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    &:hover svg {
+      transition: fill .2s linear;
+      fill: var(--gold) !important;
+    }
+  }
+}
+
+.blackout {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  pointer-events: fill;
+}
+
+.burger {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+
+  & span {
+    display: block;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 2rem;
+    width: 2rem;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 2rem;
+      position: absolute;
+      top: 7px;
+      left: 0;
+      border-radius: 2rem;
+      background-color: inherit;
+    }
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 2rem;
+      position: absolute;
+      top: -7px;
+      left: 0;
+      border-radius: 2rem;
+      background-color: inherit;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: calc(100% - 153px);
+
+  &__link, &__link_active {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--black);
+    transition: all .2s linear;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:hover {
+      color: var(--gold) !important;
+      border-color: var(--gold) !important;
+    }
+    &_active {
+      padding: 4px 0;
+      border-bottom: 2px solid var(--black);
+    }
+  }
+}
+
+@keyframes blackoutOpacity {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: absolute;
+    &__logo {
+      margin: 0 auto;
+    }
+    & hr {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--grey);
+      margin-top: 2rem;
+    }
+    &__media {
+      margin-top: 2rem;
+      opacity: 0.9;
+      & svg {
+              fill: var(--white) !important;
+      }
+    }
+  }
+
+  .blackout__active {
+    display: block;
+    animation: blackoutOpacity .5s ease-in-out forwards;
+  }
+
+  .burger {
+    display: flex;
+    transition: margin-left .5s ease-in-out;
+    & span {
+      transition: transform .5s;
+    }
+  }
+  .burger__active {
+    transition: margin-left .5s ease-in-out;
+    margin-left: 75vw;
+    & span {
+      transition: transform .5s;
+      transform: rotate(135deg);
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-450deg);
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--dark-grey);
+    height: 100vh;
+    width: 80vw;
+    top: 0;
+    left: -100vw;
+    transition: left .5s ease-in-out;
+    z-index: 50;
+    padding: 2.5rem;
+
+    &__link:not(:first-child), &__link_active:not(:first-child) {
+      margin-top: 2rem;
+    }
+    &__link, &__link_active {
+      opacity: 0.9;
+      color: var(--white) !important;
+      &_active {
+        opacity: 0.9;
+        color: var(--white) !important;
+      }
+    }
+  }
+  .nav__active {
+    left: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav {
+    width: 85vw;
+  }
+  .burger {
+    left: 0;
+  }
+  .burger__active {
+    margin-left: 82vw;
+  }
+}
