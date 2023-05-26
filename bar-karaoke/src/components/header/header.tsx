@@ -11,8 +11,10 @@ export default function HeaderComponent() {
   const [activeBurger, setActiveBurger] = useState(false);
 
   const handleBurger = () => {
-    setActiveBurger(!activeBurger);
-    document.body.classList.toggle('no-scroll');
+    if (window.innerWidth <= 768) {
+      setActiveBurger(!activeBurger);
+      document.body.classList.toggle('no-scroll');
+    }
   };
 
   useEffect(() => {
@@ -47,6 +49,7 @@ export default function HeaderComponent() {
               href="/"
               className={router.pathname === '/' ? styles.nav__link_active : styles.nav__link}
               style={{ color: color, borderColor: color }}
+              onClick={handleBurger}
             >
               Главная
             </Link>
@@ -54,6 +57,7 @@ export default function HeaderComponent() {
               href="/menu"
               className={router.pathname === '/menu' ? styles.nav__link_active : styles.nav__link}
               style={{ color: color, borderColor: color }}
+              onClick={handleBurger}
             >
               Меню
             </Link>
@@ -63,6 +67,7 @@ export default function HeaderComponent() {
                 router.pathname === '/contacts' ? styles.nav__link_active : styles.nav__link
               }
               style={{ color: color, borderColor: color }}
+              onClick={handleBurger}
             >
               Контакты
             </Link>
@@ -71,6 +76,7 @@ export default function HeaderComponent() {
               href="https://www.instagram.com/smokkin.secretproject/"
               className={styles.header__media}
               target="blank"
+              onClick={handleBurger}
             >
               <InstagramIcon style={{ fill: color }} />
             </a>
