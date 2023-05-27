@@ -6,8 +6,8 @@ import { InstagramIcon } from '../../UI/icons/';
 
 export default function HeaderComponent() {
   const router = useRouter();
-  const [color, setColor] = useState(router.pathname === '/' ? 'var(--white)' : 'var(--black)');
-  const [bgColor, setBgColor] = useState(router.pathname === '/' ? 'transparent' : 'var(--white)');
+  const [color, setColor] = useState('var(--white)');
+  const [bgColor, setBgColor] = useState('transparent');
   const [activeBurger, setActiveBurger] = useState(false);
 
   const handleBurger = () => {
@@ -20,7 +20,11 @@ export default function HeaderComponent() {
   useEffect(() => {
     const handleScroll = () => {
       if (router.pathname === '/') {
-        window.scrollY > window.innerHeight - 30
+        window.scrollY > window.innerHeight - 50
+          ? (setColor('var(--black)'), setBgColor('var(--white)'))
+          : (setColor('var(--white)'), setBgColor('transparent'));
+      } else {
+        window.scrollY > 280
           ? (setColor('var(--black)'), setBgColor('var(--white)'))
           : (setColor('var(--white)'), setBgColor('transparent'));
       }

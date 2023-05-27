@@ -1,0 +1,40 @@
+.menu {
+  background-image: url(https://demos.pixelgrade.com/rosa/wp-content/uploads/sites/5/2014/05/treat-yo-self34836_words_done.jpg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    & div {
+      width: 50%;
+      height: 950px;
+      position: relative;
+      & img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    height: 250px;
+    &__list {
+      flex-direction: column;
+      & div {
+        width: 100%;
+        height: 90vh;
+      }
+    }
+  }
+}

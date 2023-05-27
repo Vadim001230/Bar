@@ -1,13 +1,13 @@
 import { RefObject } from 'react';
 
-export const opacityScroll = (elementRef: RefObject<HTMLElement>) => {
+export const opacityScroll = (elementRef: RefObject<HTMLElement>, opacityСoeff: number) => {
   return () => {
     const parallaxText = elementRef.current;
     const windowHeight = window.innerHeight;
 
     if (parallaxText) {
       const elementHeight = parallaxText.offsetHeight;
-      const halfWindowHeight = windowHeight / 2;
+      const halfWindowHeight = windowHeight / opacityСoeff;
       const distanceFromTop = parallaxText.offsetTop - window.scrollY;
 
       if (distanceFromTop + elementHeight < halfWindowHeight) {

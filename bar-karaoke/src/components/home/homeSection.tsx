@@ -5,24 +5,10 @@ import smoothScroll from '@/helpers/smoothScroll';
 import ContentComponent from '../content/content';
 import ParralaxComponent from '../parallax/parallax';
 import Image from 'next/image';
-import { opacityScroll } from '@/helpers/opacityScroll';
-import { widthScroll } from '@/helpers/widthScroll';
+import MainText from '../header/mainText';
 
 export default function HomeSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const opacityRef = useRef<HTMLElement>(null);
-  const separatorRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scrollHandlerWidth = widthScroll(separatorRef);
-    const scrollHandler = opacityScroll(opacityRef);
-    window.addEventListener('scroll', scrollHandlerWidth);
-    window.addEventListener('scroll', scrollHandler);
-    return () => {
-      window.removeEventListener('scroll', scrollHandler);
-      window.removeEventListener('scroll', scrollHandlerWidth);
-    };
-  }, []);
 
   const scrollToBottom = () => {
     smoothScroll(window.innerHeight - window.scrollY, 300);
@@ -48,16 +34,7 @@ export default function HomeSection() {
   return (
     <>
       <section className={styles.home} ref={containerRef}>
-        <article className={styles.article} ref={opacityRef}>
-          <h2>Welcome</h2>
-          <h1>Glory hall</h1>
-          <div className={styles.separator} ref={separatorRef}>
-            <div className={styles.separator__left}></div>
-            <div className={styles.separator__center}>✻</div>
-            <div className={styles.separator__right}></div>
-          </div>
-          <h5>Готовы к открытию</h5>
-        </article>
+        <MainText title={'GLORY HALL'} subtitle={'Welcome'} other={true} opacityСoeff={2} />
         <div className={styles.scrollbtn}>
           <ScrollButton />
           <button className={styles.scrollbtn__arrow} onClick={scrollToBottom}>

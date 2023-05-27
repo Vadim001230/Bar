@@ -36,7 +36,7 @@
     line-height: 0.9;
     text-transform: uppercase;
     opacity: 0;
-    animation: fadeInh1 0.3s ease-out 0.5s forwards;
+    animation: fadeInh1 0.4s ease-out 0.5s forwards;
     text-align: center;
     padding-left: 4px;
   }
@@ -278,7 +278,16 @@
   }
 }
 
-
+@media (max-width: 375px) {
+  .article {
+    h1 {
+      font-size: 1.8rem;
+    }
+    h5 {
+      font-size: 0.8rem;
+    }
+  }
+}
 @keyframes separatorLeftRight900 {
   0% {
     opacity: 0;
