@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '@/components/layout';
+import ContactsSection from '@/components/contacts/contactsSection';
 
 export default function ContactsPage() {
   return (
@@ -11,7 +12,7 @@ export default function ContactsPage() {
         <link rel="icon" href="../../public/favicon.svg" sizes="any" />
       </Head>
       <Layout>
-        <h1>Контакты</h1>
+        <ContactsSection />
       </Layout>
     </>
   );

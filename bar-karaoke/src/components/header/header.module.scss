@@ -108,6 +108,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: calc(100% - 153px);
+  flex-wrap: nowrap;
 
   &__link, &__link_active {
     font-weight: 500;

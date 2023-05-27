@@ -28,7 +28,7 @@ export default function MenuSection() {
       <section className={styles.menu} ref={containerRef}>
         <MainText title={'МЕНЮ'} other={false} opacityСoeff={4} />
       </section>
-      <div className={styles.menu__list}>
+      <div className={`${styles.menu__list} container`}>
         <div>
           <Image src="/menu1.jpg" alt="menu" fill={true} />
         </div>
@@ -43,7 +43,7 @@ export default function MenuSection() {
         }
         isWave={true}
       />
-      <div className={styles.menu__list}>
+      <div className={`${styles.menu__list} container`}>
         <div>
           <Image src="/menu3.jpg" alt="menu" fill={true} />
         </div>
@@ -59,7 +59,7 @@ export default function MenuSection() {
         isWave={true}
       />
 
-      <div className={styles.menu__list}>
+      <div className={`${styles.menu__list} container`}>
         <div>
           <Image src="/menu5.jpg" alt="menu" fill={true} />
         </div>
