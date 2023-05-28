@@ -64,7 +64,7 @@ export default function MenuSection() {
           <Image src="/menu5.jpg" alt="menu" fill={true} />
         </div>
         <div>
-          <Image src="/menu6.jpg" alt="menu" fill={true} />
+          <Image src="/menu4.jpg" alt="menu" fill={true} />
         </div>
       </div>
     </>
