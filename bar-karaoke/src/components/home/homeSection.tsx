@@ -46,9 +46,9 @@ export default function HomeSection() {
       <div className="container">
         <ContentComponent
           title={'Discover'}
-          subTitle={'OUR STORY'}
+          subTitle={'О нас'}
           content={
-            'Rosa is a restaurant, bar and coffee roastery located on a busy corner site in Farringdon’s Exmouth Market. With glazed frontage on two sides of the building, overlooking the market and a bustling London intersection.'
+            'Новый проект Glory Hall (с английского «зал славы») – это микс из ресторана, бара и караоке. Новое заведение откроется в здании по улице Советской, 31 на месте популярной ранее «РетроПиццы».'
           }
           reverse={false}
         >
@@ -95,7 +95,7 @@ export default function HomeSection() {
           title={'Culinary'}
           subTitle={'delight'}
           content={
-            'Наш слоган «Готовим весь день».  Кухня будет работать круглосуточно. При этом она будет полностью открытой – наблюдать за работой сможет любой посетитель'
+            'Наш слоган «Готовим весь день». Кухня будет работать круглосуточно. При этом она будет полностью открытой – наблюдать за работой сможет любой посетитель'
           }
           reverse={false}
         >

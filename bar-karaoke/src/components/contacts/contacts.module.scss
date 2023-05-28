@@ -18,8 +18,8 @@
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 8rem;
 }
 
 .info {
@@ -33,6 +33,20 @@
     font-weight: 400;
     font-size: 1.3rem;
     margin-bottom: 3px;
+  }
+  &__text {
+    & a {
+      margin: 0 4px;
+      text-decoration: none;
+      color: rgb(0, 0, 200);
+    }
+  }
+  &__media {
+    fill: var(--black);
+    transition: .2s fill;
+    &:hover {
+      fill: var(--gold);
+    }
   }
 }
 .map {

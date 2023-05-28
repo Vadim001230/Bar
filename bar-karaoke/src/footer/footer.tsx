@@ -38,7 +38,7 @@ export default function FooterComponent() {
       </div>
       <div className={`${styles.footer__container} container`}>
         <div className={styles.footer__content}>
-          © GLORY HALL &nbsp; • &nbsp; г. Гродно ул. Совецкая 31 &nbsp; • &nbsp; Tel: 71494563
+          © GLORY HALL &nbsp; • &nbsp; г. Гродно ул. Совецкая 31 &nbsp; • &nbsp; Tel: +3752971494563
           &nbsp;
           <br></br>Ресторан &nbsp; • &nbsp; Бар &nbsp; • &nbsp; Караоке
         </div>
