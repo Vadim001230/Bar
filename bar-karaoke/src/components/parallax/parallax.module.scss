@@ -50,9 +50,15 @@
       }
   }
 }
-
+@media (max-width: 425px) {
+  .parallax {
+    height: 310px;
+    background-size: 120%;
+  }
+}
 @media (max-width: 375px) {
   .parallax {
-    height: 280px;
+    height: 260px;
+    background-size: 130%;
   }
 }
