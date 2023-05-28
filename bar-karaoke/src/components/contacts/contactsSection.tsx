@@ -1,7 +1,7 @@
+import { Placemark, YMaps, Map } from '@pbe/react-yandex-maps';
 import { useEffect, useRef } from 'react';
 import MainText from '../header/mainText';
 import styles from './contacts.module.scss';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
 export default function ContactsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
