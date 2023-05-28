@@ -30,10 +30,10 @@ export default function MenuSection() {
       </section>
       <div className={`${styles.menu__list} container`}>
         <div>
-          <Image src="/menu1.jpg" alt="menu" fill={true} />
+          <Image src="/menu1.jpg" alt="menu" fill={true} quality={100} />
         </div>
         <div>
-          <Image src="/menu2.jpg" alt="menu" fill={true} />
+          <Image src="/menu2.jpg" alt="menu" fill={true} quality={100} />
         </div>
       </div>
       <ParralaxComponent
@@ -45,10 +45,10 @@ export default function MenuSection() {
       />
       <div className={`${styles.menu__list} container`}>
         <div>
-          <Image src="/menu3.jpg" alt="menu" fill={true} />
+          <Image src="/menu3.jpg" alt="menu" fill={true} quality={100} />
         </div>
         <div>
-          <Image src="/menu6.jpg" alt="menu" fill={true} />
+          <Image src="/menu6.jpg" alt="menu" fill={true} quality={100} />
         </div>
       </div>
       <ParralaxComponent
@@ -61,10 +61,10 @@ export default function MenuSection() {
 
       <div className={`${styles.menu__list} container`}>
         <div>
-          <Image src="/menu5.jpg" alt="menu" fill={true} />
+          <Image src="/menu5.jpg" alt="menu" fill={true} quality={100} />
         </div>
         <div>
-          <Image src="/menu4.jpg" alt="menu" fill={true} />
+          <Image src="/menu4.jpg" alt="menu" fill={true} quality={100} />
         </div>
       </div>
     </>
