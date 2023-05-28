@@ -45,9 +45,9 @@ export default function HeaderComponent() {
           >
             <span style={{ backgroundColor: color }}></span>
           </button>
-          <h1 className={styles.header__logo} style={{ color: color }}>
+          <Link href="/" className={styles.header__logo} style={{ color: color }}>
             Glory hall
-          </h1>
+          </Link>
           <nav className={`${styles.nav} ${activeBurger ? styles.nav__active : ''}`}>
             <Link
               href="/"
