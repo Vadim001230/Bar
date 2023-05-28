@@ -1,3 +1,4 @@
+import { InstagramIcon } from '@/UI/icons';
 import { Placemark, YMaps, Map } from '@pbe/react-yandex-maps';
 import { useEffect, useRef } from 'react';
 import MainText from '../header/mainText';
@@ -36,16 +37,49 @@ export default function ContactsSection() {
           </div>
           <div className={styles.info__item}>
             <p className={styles.info__title}>Телефон: </p>
-            <p className={styles.info__text}>+3752971494563</p>
+            <p className={styles.info__text}>
+              <a href="tel: +3752971494563" target="blank">
+                +3752971494563
+              </a>
+            </p>
           </div>
           <div className={styles.info__item}>
             <p className={styles.info__title}>Email: </p>
-            <p className={styles.info__text}>smokkin.secret@gmail.com</p>
+            <p className={styles.info__text}>
+              <a href="mailto: smokkin.secret@gmail.com" target="blank">
+                smokkin.secret@gmail.com
+              </a>
+            </p>
           </div>
           <div className={styles.info__item}>
             <p className={styles.info__title}>Время работы: </p>
             <p className={styles.info__text}>Вс-чт с 11:00 до 22:30</p>
             <p className={styles.info__text}>Пт-сб с 11:00 до 02:00</p>
+          </div>
+          <div className={styles.info__item}>
+            <p className={styles.info__title}>Наши соцсети: </p>
+            <p className={styles.info__text}>
+              <a
+                href="https://www.instagram.com/smokkin.secretproject/"
+                className={styles.info__media}
+                target="blank"
+              >
+                <InstagramIcon />
+              </a>
+            </p>
+          </div>
+          <div className={styles.info__item}>
+            <p className={styles.info__title}>Открытые вакансии: </p>
+            <p className={styles.info__text}>
+              Заполните
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdf0pyeWN6ZQIhTYE9ltvxbzKmHYhvfJuwFFMhWrTo9Ez4bwQ/viewform"
+                target="blank"
+              >
+                анкету
+              </a>
+              соискателя
+            </p>
           </div>
           <div className={styles.info__item}>
             <p className={styles.info__title}>О нас:</p>
