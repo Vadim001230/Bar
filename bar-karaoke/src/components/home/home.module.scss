@@ -1,8 +1,9 @@
 .home {
-  background-image: url(https://demos.pixelgrade.com/rosa/wp-content/uploads/sites/5/2014/05/holiday2013_front.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.10),rgba(0, 0, 0, 0.10)), url(/hp_1.jpg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-x: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,6 +170,7 @@
   }
 }
 
+
 @keyframes fadeInh1 {
   0% {
     opacity: 0;
@@ -254,6 +256,9 @@
 }
 
 @media (max-width: 768px) {
+  .imagesX4 {
+    gap: 5px;
+  }
   .article {
     h2 {
       font-size: 85px;
