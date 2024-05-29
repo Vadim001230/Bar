@@ -60,7 +60,7 @@ export default function HomeSection() {
         </ContentComponent>
       </div>
 
-      <ParralaxComponent title={'Tasteful'} subtitle={'RECIPES'} imageSrc={'/hp_11.jpg'} />
+      <ParralaxComponent title={'Tasteful'} subtitle={'RECIPES'} imageSrc={'/hp_11.webp'} />
 
       <div className="container">
         <ContentComponent
@@ -88,7 +88,7 @@ export default function HomeSection() {
         </ContentComponent>
       </div>
 
-      <ParralaxComponent title={'The perfect'} subtitle={'BLEND'} imageSrc={'vip_2.jpg'} />
+      <ParralaxComponent title={'The perfect'} subtitle={'BLEND'} imageSrc={'vip_2.webp'} />
 
       <div className="container">
         <ContentComponent
